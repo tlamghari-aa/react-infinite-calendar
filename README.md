@@ -4,8 +4,8 @@
 
 # React Infinite Calendar
 
-[![npm version](https://img.shields.io/npm/v/react-infinite-calendar.svg)](https://www.npmjs.com/package/react-infinite-calendar)
-[![downloads](https://img.shields.io/npm/dm/react-infinite-calendar.svg)](https://www.npmjs.com/package/react-infinite-calendar)
+[![npm version](https://img.shields.io/npm/v/@appannie/react-infinite-calendar.svg)](https://www.npmjs.com/package/@appannie/react-infinite-calendar)
+[![downloads](https://img.shields.io/npm/dm/@appannie/react-infinite-calendar.svg)](https://www.npmjs.com/package/@appannie/react-infinite-calendar)
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)](https://github.com/appannie/react-infinite-calendar/blob/master/LICENSE)
 [![Gitter](https://badges.gitter.im/clauderic/react-infinite-calendar.svg)](https://gitter.im/clauderic/react-infinite-calendar)
 
@@ -32,15 +32,15 @@
 Using [npm](https://www.npmjs.com/):
 
 ```
-npm install react-infinite-calendar react-addons-css-transition-group --save
-yarn add react-infinite-calendar react-addons-css-transition-group
+npm install @appannie/react-infinite-calendar react-addons-css-transition-group --save
+yarn add @appannie/react-infinite-calendar react-addons-css-transition-group
 ```
 
 ES6, CommonJS, and UMD builds are available with each distribution. For example:
 
 ```js
-import InfiniteCalendar from 'react-infinite-calendar';
-import 'react-infinite-calendar/styles.css'; // Make sure to import the default stylesheet
+import InfiniteCalendar from '@appannie/react-infinite-calendar';
+import '@appannie/react-infinite-calendar/styles.css'; // Make sure to import the default stylesheet
 ```
 
 You can also use a global-friendly UMD build:
@@ -61,8 +61,8 @@ var InfiniteCalendar = window.InfiniteCalendar.default;
 ```js
 import React from 'react';
 import { render } from 'react-dom';
-import InfiniteCalendar from 'react-infinite-calendar';
-import 'react-infinite-calendar/styles.css'; // only needs to be imported once
+import InfiniteCalendar from '@appannie/react-infinite-calendar';
+import '@appannie/react-infinite-calendar/styles.css'; // only needs to be imported once
 
 // Render the Calendar
 var today = new Date();
@@ -145,7 +145,7 @@ If you find an [issue](https://github.com/appannie/react-infinite-calendar/issue
 
 Yes please! Feature requests / pull requests are welcome. [Learn how to contribute](https://github.com/appannie/react-infinite-calendar/blob/master/CONTRIBUTING.md)
 
-Have a suggestion or just want to say hello? Come chat on [Gitter](https://gitter.im/appannie/react-infinite-calendar)!
+Have a suggestion or just want to say hello? Come chat on [Gitter](https://gitter.im/clauderic/react-infinite-calendar)!
 
 ## License
 
