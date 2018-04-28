@@ -12,6 +12,7 @@
         "clean": "nwb clean-module && nwb clean-demo",
         "start": "nwb serve-react-demo",
         "storybook": "start-storybook -p 9001 -c .storybook",
+        "deploy-storybook": "storybook-to-ghpages",
         "test": "nwb test-react",
         "test:coverage": "nwb test-react --coverage",
         "test:watch": "nwb test-react --server",
@@ -32,6 +33,7 @@
     "devDependencies": {
         "@kadira/storybook": "^2.35.3",
         "@kadira/storybook-addon-options": "^1.0.1",
+        "@storybook/storybook-deployer": "^2.3.0",
         "babel-eslint": "^7.0.0",
         "babel-plugin-css-modules-transform": "^1.2.1",
         "eslint": "^3.8.1",
