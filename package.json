@@ -1,19 +1,14 @@
 {
     "name": "@appannie/react-infinite-calendar",
     "version": "2.4.0",
-    "description": "Infinite scrolling date-picker built with React, with localization, themes, keyboard support, and more.",
+    "description":
+        "Infinite scrolling date-picker built with React, with localization, themes, keyboard support, and more.",
     "main": "lib/index.js",
     "module": "es/index.js",
-    "files": [
-        "css",
-        "es",
-        "lib",
-        "umd",
-        "styles.css"
-    ],
+    "files": ["css", "es", "lib", "umd", "styles.css"],
     "scripts": {
         "build": "npm run clean && nwb build-react-component --no-vendor",
-        "prepublish": "npm run build",
+        "prepare": "npm run build",
         "clean": "nwb clean-module && nwb clean-demo",
         "start": "nwb serve-react-demo",
         "storybook": "start-storybook -p 9001 -c .storybook",
