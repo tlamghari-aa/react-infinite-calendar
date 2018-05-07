@@ -147,7 +147,7 @@ export default class Years extends Component {
       : height + 50;
 
     const scrollOffset =  years.length * rowHeight < height + 50 || selectedYearIndex === -1 ? 0 : heights.slice(0, selectedYearIndex).reduce((acc, val) => acc + val, 0) - (containerHeight / 2) + 50;
-    console.log('scrollOffset:', scrollOffset, 'selectedYearIndex:', selectedYearIndex);
+
     return (
       <div
         className={styles.root}
