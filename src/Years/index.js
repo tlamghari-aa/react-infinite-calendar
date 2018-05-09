@@ -142,9 +142,16 @@ export default class Years extends Component {
       ? rowHeight + SPACING
       : rowHeight
     );
-    const containerHeight = years.length * rowHeight < height + 50
+    const isYearLess = years.length * rowHeight < height + 50;
+    const containerHeight = isYearLess
       ? years.length * rowHeight
       : height + 50;
+
+    let scrollOffset = 0;
+    if (!isYearLess && selectedYearIndex !== -1) {
+        const top = heights.slice(0, selectedYearIndex).reduce((acc, val) => acc + val, 0);
+        scrollOffset = top - (containerHeight / 2) + 50;
+    }
 
     return (
       <div
@@ -159,8 +166,7 @@ export default class Years extends Component {
           itemCount={years.length}
           estimatedItemSize={rowHeight}
           itemSize={(index) => heights[index]}
-          scrollToIndex={selectedYearIndex !== -1 ? selectedYearIndex : null}
-          scrollToAlignment='center'
+          scrollOffset={scrollOffset}
           renderItem={({index, style}) => {
             const year = years[index];
             const isActive = index === selectedYearIndex;
