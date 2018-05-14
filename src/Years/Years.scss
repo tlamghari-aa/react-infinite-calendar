@@ -112,7 +112,7 @@ $cellSize: 44px;
 
         .selection {
           @include circle($cellSize);
-          line-height: $cellSize;
+          line-height: $cellSize - 4px;
           z-index: 2;
         }
       }
