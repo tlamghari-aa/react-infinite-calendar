@@ -39,7 +39,7 @@
         "@kadira/storybook": "^2.35.3",
         "@kadira/storybook-addon-options": "^1.0.1",
         "@storybook/storybook-deployer": "^2.3.0",
-        "babel-eslint": "^7.0.0",
+        "babel-eslint": "^8.2.3",
         "babel-plugin-css-modules-transform": "^1.2.1",
         "eslint": "^3.8.1",
         "eslint-config-react-app": "^0.5.1",
@@ -48,10 +48,10 @@
         "eslint-plugin-jsx-a11y": "^2.2.3",
         "eslint-plugin-react": "^6.4.1",
         "node-sass": "^4.5.0",
-        "nwb": "^0.15.6",
-        "nwb-sass": "^0.7.1",
-        "react": "^15.4.2",
-        "react-dom": "^15.4.2"
+        "nwb": "^0.21.5",
+        "nwb-sass": "^0.8.4",
+        "react": "^16.3.2",
+        "react-dom": "^16.3.2"
     },
     "homepage": "appannie/react-infinite-calendar",
     "license": "MIT",

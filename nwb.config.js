@@ -1,4 +1,5 @@
 /* eslint-disable */
+const path = require('path');
 
 module.exports = {
   type: 'react-component',
@@ -18,7 +19,7 @@ module.exports = {
     plugins: [
       ['css-modules-transform', {
         generateScopedName: 'Cal__[name]__[local]',
-        "preprocessCss": "./preprocess-css.js",
+        "preprocessCss": path.join(__dirname, "./preprocess-css.js"),
         "extensions": [".scss"],
         "extractCss": "./styles.css"
       }]
