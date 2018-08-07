@@ -1,6 +1,6 @@
 /* eslint-disable sort-keys */
 import React from 'react';
-import {addDecorator, storiesOf} from '@kadira/storybook';
+import { addDecorator, storiesOf } from '@storybook/react';
 import InfiniteCalendar, {
   Calendar,
   defaultMultipleDateInterpolation,
@@ -8,6 +8,7 @@ import InfiniteCalendar, {
   withKeyboardSupport,
   withMultipleDates,
   withRange,
+  withMonthRange,
 } from '../';
 import styles from './stories.scss';
 
@@ -26,7 +27,9 @@ const today = new Date();
 
 storiesOf('Basic settings', module)
   .add('Default Configuration', () => <InfiniteCalendar />)
-  .add('Initially Selected Date', () => <InfiniteCalendar selected={addDays(today, 5)} />)
+  .add('Initially Selected Date', () => (
+    <InfiniteCalendar selected={addDays(today, 5)} />
+  ))
   .add('Blank Initial State', () => <InfiniteCalendar selected={null} />)
   .add('Min Date', () => (
     <InfiniteCalendar
@@ -65,17 +68,43 @@ storiesOf('Higher Order Components', module)
       Component={withRange(withKeyboardSupport(Calendar))}
     />
   ))
+  .add('Month Range selection', () => (
+    <InfiniteCalendar
+      selected={{
+        start: subMonths(new Date(), 1),
+        end: addMonths(new Date(), 1),
+      }}
+      display={'years'}
+      displayOptions={{
+        showHeader: false,
+        hideYearsOnSelect: false,
+      }}
+      minDate={subMonths(new Date(), 10)}
+      maxDate={addMonths(new Date(), 10)}
+      Component={withMonthRange(Calendar)}
+    />
+  ))
   .add('Multiple date selection', () => {
     return (
       <InfiniteCalendar
-        selected={[addDays(today, -600), addDays(today, -200), today, addDays(today, 50), addDays(today, 400)]}
+        selected={[
+          addDays(today, -600),
+          addDays(today, -200),
+          today,
+          addDays(today, 50),
+          addDays(today, 400),
+        ]}
         interpolateSelection={defaultMultipleDateInterpolation}
         Component={withMultipleDates(withKeyboardSupport(Calendar))}
       />
     );
   })
   .add('Keyboard Support', () => {
-    return <InfiniteCalendar Component={withDateSelection(withKeyboardSupport(Calendar))} />;
+    return (
+      <InfiniteCalendar
+        Component={withDateSelection(withKeyboardSupport(Calendar))}
+      />
+    );
   });
 
 storiesOf('Internationalization', module)

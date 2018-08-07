@@ -6,6 +6,7 @@ import isBefore from 'date-fns/is_before';
 import isSameDay from 'date-fns/is_same_day';
 import endOfDay from 'date-fns/end_of_day';
 import startOfDay from 'date-fns/start_of_day';
+import parse from 'date-fns/parse';
 import {withPropsOnChange} from 'recompose';
 
 export const keyCodes = {
@@ -157,7 +158,10 @@ export function getDateString(year, month, date) {
 }
 
 export function getMonthsForYear(year, day = 1) {
-  return Array.apply(null, Array(12)).map((val, index) => new Date(year, index, day));
+  return Array.apply(null, Array(12)).map((val, index) => {
+    const constrainedDay = Math.min(getDaysInMonth(new Date(year, index, 1)), isNaN(day) ? 1 : day);
+    return new Date(year, index, constrainedDay);
+  });
 }
 
 export const withImmutableProps = (props) => withPropsOnChange(() => false, props);
@@ -185,5 +189,19 @@ export function range(start, stop, step = 1) {
 
   return range;
 };
+
+export function isRange(date) {
+    if (!date) {
+        return false;
+    }
+    const {start, end} = date;
+    return start !== undefined && end !== undefined;
+}
+
+export function getSortedDate(start, end) {
+  return isBefore(start, end)
+    ? {start, end}
+    : {start: end, end: start};
+}
 
 export {default as animate} from './animate';
